@@ -132,7 +132,15 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="//app.pageproofer.com/embed/46c4765a-7a0b-5330-b971-9afeb6e2511e" async="true"></script>
+  <script>
+    window.onUsersnapLoad = function(api) {
+      api.init();
+    };
+    var script = document.createElement('script');
+    script.defer = 1;
+    script.src = 'https://widget.usersnap.com/global/load/0e73ad26-ffc8-411e-9990-0f79101b109c?onload=onUsersnapLoad';
+    document.getElementsByTagName('head')[0].appendChild(script);
+  </script>  
 </body>
 
 </html>
