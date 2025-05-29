@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const surveyButtons = document.querySelectorAll('.survey-btn');
     const backButton = document.getElementById('back-btn');
     const surveyButton = document.getElementById('survey-btn');
-
     // Function to show the survey
     function showSurvey() {
         // Hide the hero section
