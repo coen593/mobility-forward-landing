@@ -40,7 +40,7 @@ if (contactForm) {
 
         // 3) Send to your n8n webhook
         const response = await fetch(
-          'https://n8n.coennection.xyz/webhook-test/78370055-b625-4e34-9040-9c40c0cbf64c',
+          'https://n8n.coennection.xyz/webhook/78370055-b625-4e34-9040-9c40c0cbf64c',
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
