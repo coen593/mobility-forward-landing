@@ -64,6 +64,16 @@ if (contactForm) {
   });
 }
 
+// Smooth-scroll behavior for Contact Us nav button
+const contactBtn = document.getElementById('contact-btn');
+const contactSection = document.getElementById('contact-section');
+if (contactBtn && contactSection) {
+    contactBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+}
+
     // Function to show the survey
     function showSurvey() {
         // Hide the hero section
