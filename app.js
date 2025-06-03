@@ -74,6 +74,74 @@ if (contactBtn && contactSection) {
     });
 }
 
+// Section 3: Accordion + dynamic image swapping + responsive repositioning
+const section3 = document.querySelector('.section-3');
+if (section3) {
+  const headers       = section3.querySelectorAll('.accordion__header');
+  const panes         = section3.querySelectorAll('.accordion__pane');
+  const imgContainer  = section3.querySelector('#section3-img-container');
+  const imgElem       = imgContainer.querySelector('img');
+
+  // TODO: replace with your real image URLs, one per accordion item
+  const sources = [
+    './beachlaptop.avif',
+    './beachlaptop.avif',
+    './beachlaptop.avif',
+    './beachlaptop.avif',
+    './beachlaptop.avif',
+    './beachlaptop.avif'
+  ];
+
+  // Remember desktop placement
+  const originalParent      = imgContainer.parentNode;
+  const originalNextSibling = imgContainer.nextElementSibling;
+
+  // Find initial active accordion index
+  let activeIndex = Array.from(panes).findIndex(p => p.classList.contains('active'));
+  if (activeIndex < 0) activeIndex = 0;
+
+  function updateImage(idx) {
+    imgElem.src = sources[idx];
+    if (window.innerWidth < 992) {
+      // Mobile: move under active pane
+      const activePane = panes[idx];
+      if (imgContainer.parentNode !== activePane) {
+        imgContainer.remove();
+        activePane.appendChild(imgContainer);
+      }
+    } else {
+      // Desktop: restore to left column
+      if (imgContainer.parentNode !== originalParent) {
+        imgContainer.remove();
+        originalParent.insertBefore(imgContainer, originalNextSibling);
+      }
+    }
+  }
+
+  // Initial render
+  updateImage(activeIndex);
+
+  // Wire up clicks
+  headers.forEach((h, i) => {
+    h.addEventListener('click', () => {
+      const wasOpen = panes[i].classList.contains('active');
+      panes.forEach(p => p.classList.remove('active'));
+      headers.forEach(h2 =>
+        h2.querySelector('.accordion__icon').style.transform = 'rotate(0deg)'
+      );
+      if (!wasOpen) {
+        panes[i].classList.add('active');
+        h.querySelector('.accordion__icon').style.transform = 'rotate(180deg)';
+        activeIndex = i;
+      }
+      updateImage(activeIndex);
+    });
+  });
+
+  // Reposition on resize
+  window.addEventListener('resize', () => updateImage(activeIndex));
+}
+
     // Function to show the survey
     function showSurvey() {
         // Hide the hero section
@@ -115,18 +183,5 @@ if (contactBtn && contactSection) {
         surveyButton.style.display = 'inline-block'; // Show the Take Survey button
     });
 
-    // Section 3 Accordion logic
-    const section3Headers = document.querySelectorAll('.section-3 .accordion__header');
-    const section3Panes   = document.querySelectorAll('.section-3 .accordion__pane');
-    section3Headers.forEach((header, i) => {
-      header.addEventListener('click', () => {
-        const isOpen = section3Panes[i].classList.contains('active');
-        section3Panes.forEach(p => p.classList.remove('active'));
-        section3Headers.forEach(h => h.querySelector('.accordion__icon').style.transform = 'rotate(0deg)');
-        if (!isOpen) {
-          section3Panes[i].classList.add('active');
-          header.querySelector('.accordion__icon').style.transform = 'rotate(180deg)';
-        }
-      });
-    });
+    
 });
