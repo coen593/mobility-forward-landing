@@ -17,6 +17,7 @@
 
   <!-- Your Custom CSS file that will include your blocks CSS -->
   <link rel="stylesheet" href="./app.css">
+  <script src="https://www.google.com/recaptcha/api.js?render=6Leur1QrAAAAAN2JmDO5Fvoy2cayo4C6nYcDZE6D"></script>
   <script async src="https://tally.so/widgets/embed.js" defer></script>
   <script src="https://unpkg.com/tua-body-scroll-lock" defer></script>
   <script src="app.js" defer></script>
@@ -71,9 +72,7 @@
   <div class="block-8-scr info__section space-between-blocks cta-block">
     <div class="container position-relative">
       <div class="row px-2 align-items-center justify-content-center flex-column-reverse flex-lg-row">
-        <!-- CONTENT -->
-        <h3 class="mt-5"><span class="highlight">YOUR FEEDBACK</span> WILL HELP US CUSTOMIZE AND IMPROVE SOLUTIONS TO BETTER MEET YOUR NEEDS AND EXPECTATIONS.</h3>
-          
+        <!-- CONTENT -->         
         <div class="col-lg-6 position-relative mt-lg-0">
           <p class="block__paragraph block__paragraph--big mb-3">Most traditional systems weren't made for people on the move. They're rigid, expensive, and full of fine print. We believe there's a better way — a peer-powered approach to protection where communities support each other and unused contributions go back to the group. Take a quick survey and help us understand what you need to feel safe and covered — no matter where life takes you.<div class="hero__btns-container survey-btn"><a class="hero__btn btn btn-primary mb-2 mb-lg-0 mx-1 mx-lg-2 survey-btn" href="#!">Take the survey</a>
           </div>
@@ -98,7 +97,7 @@
   </div>
 
   <!-- Section 3: Our Model -->
-<div class="block-8-scr info__section space-between-blocks section-3">
+<div class="block-8-scr info__section space-between-blocks cta-block section-3">
   <div class="container">
     <h2 class="block__title mb-1">Benefits of our model</h2>
     <div class="row align-items-top mb-4">
@@ -186,6 +185,47 @@
   <div id="survey-container" style="display: none;">
     <iframe data-tally-src="https://tally.so/r/3jg4eR?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="✈️ Living and Working Abroad – Tell Us About You!"></iframe>
   </div>
+
+  <!-- CTA Banner -->
+  <div class="block-8-scr info__section space-between-blocks cta-block cta-banner">
+    <div class="container text-center">
+      <p>Your feedback will help us customize and improve solutions to better meet your needs and expectations.</p>
+      <div class="hero__btns-container survey-btn">
+        <a class="hero__btn btn btn-primary" href="#!">Take the survey</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5: Contact Form -->
+  <div class="block-8-scr info__section space-between-blocks cta-block contact-form-section">
+    <div class="container">
+      <h2 class="block__title mb-4">Contact Us</h2>
+      <form class="contact-form" id="contact-form">
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" class="form-control" name="name" placeholder="Name">
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" name="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <input type="text" class="form-control" name="subject" placeholder="Subject">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <textarea class="form-control" rows="3" name="message" placeholder="Your message"></textarea>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary mt-3">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!------------------------------>
   <!--Footer---------------->
   <!------------------------------>
@@ -194,18 +234,12 @@
     <div class="container">
       <div class="row px-0 mx-0 justify-content-center align-items-center">
         <!-- <div class="block-44__logo-container"><img class="block-44__logo" src="https://frontendor.com/preview/assets/ui-library/Blocks/blocks__assets/images/logo-shape.svg"></div> -->
-        <ul class="block-44__list list-unstyled justify-content-center mb-0">
-          <li class="block-44__li-1"><a href="mailto:mfb@mobilityforwardbenefits.com" class="block-44__link"></a></li>
-        </ul>
       </div>
     </div>
     <hr class="block-44__divider">
     <div class="container">
       <div class="row flex-column flex-md-row px-2 justify-content-center">
         <div class="flex-grow-1">
-          <ul class="block-44__extra-links d-flex list-unstyled p-0">
-            <li class="mx-2"><a href="mailto:mfb@mobilityforwardbenefits.com" class="block-44__link m-0"><i class="fas fa-envelope"></i></a></li>
-          </ul>
         </div>
         <p class="block-44__copyrights">© 2025 Mobility Forward Benefits. All Rights Reserved.</p>
       </div>

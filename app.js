@@ -14,6 +14,56 @@ document.addEventListener('DOMContentLoaded', function() {
     const surveyButtons = document.querySelectorAll('.survey-btn');
     const backButton = document.getElementById('back-btn');
     const surveyButton = document.getElementById('survey-btn');
+
+ // ─── Contact form + reCAPTCHA v3 ─────────────────────────────────────────────
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  // wait for the reCAPTCHA library to finish loading
+  grecaptcha.ready(() => {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      try {
+        // 1) Execute reCAPTCHA v3 and get the token
+        const token = await grecaptcha.execute(
+          '6Leur1QrAAAAAN2JmDO5Fvoy2cayo4C6nYcDZE6D',  // ← your site-key
+          { action: 'submit' }
+        );
+
+        // 2) Build payload from form fields
+        const formData = new FormData(contactForm);
+        const payload = {};
+        formData.forEach((value, key) => {
+          payload[key] = value;
+        });
+        payload['g-recaptcha-response'] = token;
+
+        // 3) Send to your n8n webhook
+        const response = await fetch(
+          'https://n8n.coennection.xyz/webhook-test/78370055-b625-4e34-9040-9c40c0cbf64c',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Server returned ${response.status}`);
+        }
+
+        // 4) Success feedback
+        alert('Thank you! Your message has been sent.');
+        contactForm.reset();
+
+      } catch (err) {
+        console.error('Contact form error:', err);
+        alert('Oops—something went wrong. Please try again.');
+      }
+    });
+  });
+}
+
     // Function to show the survey
     function showSurvey() {
         // Hide the hero section

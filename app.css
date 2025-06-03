@@ -13,7 +13,8 @@
     --hero-nav-height: 100px;
 
     /* FOR BUTTONS & INPUTS */
-    --elements-roundness: 10rem;
+    --buttons-roundness: 10rem;
+    --inputs-roundness: 20px;
 
     --space-between-blocks: 5.3rem;
     /* for mobiles */
@@ -63,7 +64,7 @@
     font-size: 0.87rem;
     padding: 0.8rem 1.6rem;
     border: none;
-    border-radius: var(--elements-roundness);
+    border-radius: var(--buttons-roundness);
     transition: 0.2s all;
   }
 
@@ -1134,7 +1135,6 @@
 .section-3 {
   background-color: var(--secondary);
   padding: 2rem;        /* generous padding on all sides */
-  border-radius: 8px;  
   color: var(--secondary-invert)
 }
 
@@ -1159,6 +1159,48 @@
     display: block;
     transition: transform 0.5s ease-in-out;
     /* padding-top: ; */
+}
+
+.cta-banner {
+  background: var(--gradient-primary);
+  color: var(--primary-invert);
+  padding: 2rem 0;
+  text-align: center;
+}
+.cta-banner p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cta-banner .btn-primary {
+  background: linear-gradient(230deg, #ffffff, #f3e8ff);
+  color: var(--primary);
+  border: none;
+}
+
+/* Contact Form Section */
+.contact-form-section .form-control {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: var(--inputs-roundness);
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.contact-form-section .form-control:focus {
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+.contact-form-section .btn-primary {
+  padding: 0.8rem 2rem;
+}
+
+.contact-form-section .contact-form {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 html { margin: 0; height: 100%; }
