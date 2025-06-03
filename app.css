@@ -1130,6 +1130,37 @@
     align-items: center;
 }
 
+/* Section 3 Accordion */
+.section-3 {
+  background-color: var(--secondary);
+  padding: 2rem;        /* generous padding on all sides */
+  border-radius: 8px;  
+  color: var(--secondary-invert)
+}
+
+.section-3 .accordion__header {
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 0.7rem 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.section-3 .accordion__icon {
+    transition: transform 0.5s ease;
+}
+.section-3 .accordion__pane {
+    display: none;
+    transition: transform 0.5s ease;
+    /* padding-bottom: 0.5rem; */
+}
+.section-3 .accordion__pane.active {
+    display: block;
+    transition: transform 0.5s ease-in-out;
+    /* padding-top: ; */
+}
+
 html { margin: 0; height: 100%; }
 iframe { height: calc(100vh - var(--hero-nav-height)) }
 /* iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0; } */

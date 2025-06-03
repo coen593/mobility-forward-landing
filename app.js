@@ -54,4 +54,19 @@ document.addEventListener('DOMContentLoaded', function() {
         backButton.style.display = 'none'; // Hide the Back button
         surveyButton.style.display = 'inline-block'; // Show the Take Survey button
     });
+
+    // Section 3 Accordion logic
+    const section3Headers = document.querySelectorAll('.section-3 .accordion__header');
+    const section3Panes   = document.querySelectorAll('.section-3 .accordion__pane');
+    section3Headers.forEach((header, i) => {
+      header.addEventListener('click', () => {
+        const isOpen = section3Panes[i].classList.contains('active');
+        section3Panes.forEach(p => p.classList.remove('active'));
+        section3Headers.forEach(h => h.querySelector('.accordion__icon').style.transform = 'rotate(0deg)');
+        if (!isOpen) {
+          section3Panes[i].classList.add('active');
+          header.querySelector('.accordion__icon').style.transform = 'rotate(180deg)';
+        }
+      });
+    });
 });
