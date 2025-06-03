@@ -929,14 +929,25 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
     top: 0;
+    bottom: 0;
     width: 100%;
     height: 100vh;
     z-index: 0;
-    /* transform: scale(2); */
-    /* transform-origin: top */
-  }
+    overflow: hidden;       /* clip any overflow */
+}
+
+.hero__video-container video {
+    position: absolute;     /* take it out of flow */
+    top: 50%;
+    left: 50%;
+    min-width: 100%;        /* ensure it always covers container */
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);  /* center it */
+    object-fit: cover;      /* preserve aspect ratio while covering */
+}
   
   @media(min-width:992px) {
     .hero__video-container {
@@ -953,8 +964,12 @@
     bottom: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(45deg, #000, transparent);
-    z-index: 1
+    background: linear-gradient(45deg,
+     rgba(0, 0, 0, 0.8) 0%,
+     rgba(0, 0, 0, 0.6) 70%,
+     rgba(0, 0, 0, 0.3) 100%
+    );
+    z-index: 1;
   }
   
   video {
