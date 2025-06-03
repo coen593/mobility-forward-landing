@@ -26,7 +26,7 @@ if (contactForm) {
       try {
         // 1) Execute reCAPTCHA v3 and get the token
         const token = await grecaptcha.execute(
-          '6Leur1QrAAAAAN2JmDO5Fvoy2cayo4C6nYcDZE6D',  // ← your site-key
+          '6Leur1QrAAAAAN2JmDO5Fvoy2cayo4C6nYcDZE6D', 
           { action: 'submit' }
         );
 
