@@ -13,7 +13,8 @@ playVideo();
 document.addEventListener('DOMContentLoaded', function() {
     const surveyButtons = document.querySelectorAll('.survey-btn');
     const backButton = document.getElementById('back-btn');
-    const surveyButton = document.getElementById('survey-btn');
+    const contactNavBtn = document.getElementById('contact-btn');
+    const contactSection = document.getElementById('contact-section');
 
  // ─── Contact form + reCAPTCHA v3 ─────────────────────────────────────────────
 const contactForm = document.getElementById('contact-form');
@@ -66,7 +67,6 @@ if (contactForm) {
 
 // Smooth-scroll behavior for Contact Us nav button
 const contactBtn = document.getElementById('contact-btn');
-const contactSection = document.getElementById('contact-section');
 if (contactBtn && contactSection) {
     contactBtn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -145,6 +145,9 @@ if (section3) {
     // Function to show the survey
     function showSurvey() {
         // Hide the hero section
+        contactNavBtn.style.display = 'none';
+        backButton.style.display    = 'inline-block';
+                
         document.querySelector('.hero__body').style.display = 'none'; // Hides the hero section
         document.querySelector('.hero__video-container').style.display = 'none'; // Hides the video container
 
@@ -157,7 +160,7 @@ if (section3) {
         document.getElementById('survey-container').style.display = 'block';
 
         // Toggle button visibility
-        surveyButton.style.display = 'none'; // Hide the Take Survey button
+        contactNavBtn.style.display = 'none'; // Hide the Take Survey button
         backButton.style.display = 'inline-block'; // Show the Back button
     }
 
@@ -180,7 +183,7 @@ if (section3) {
 
         // Toggle button visibility
         backButton.style.display = 'none'; // Hide the Back button
-        surveyButton.style.display = 'inline-block'; // Show the Take Survey button
+        contactNavBtn.style.display = 'inline-block'; // Show the Take Survey button
     });
 
     
