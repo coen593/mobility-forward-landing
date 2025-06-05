@@ -1253,5 +1253,5 @@
 }
 
 html { margin: 0; height: 100%; }
-iframe { height: calc(100vh - var(--hero-nav-height)) }
+iframe { max-width: 800px; height: calc(100vh - var(--hero-nav-height)) }
 /* iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0; } */

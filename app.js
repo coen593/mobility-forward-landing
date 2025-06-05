@@ -143,6 +143,9 @@ if (section3) {
 
     // Function to show the survey
     function showSurvey() {
+        const headerEl = document.querySelector('header.hero');
+        headerEl.style.minHeight = '0';
+
         // Hide the hero section
         contactNavBtn.style.display = 'none';
         backButton.style.display    = 'inline-block';
@@ -168,6 +171,9 @@ if (section3) {
     })
 
     backButton.addEventListener('click', function() {
+        const headerEl = document.querySelector('header.hero');
+        headerEl.style.minHeight = '';
+
         // Show the hero section and other content again
         document.querySelector('.hero__body').style.display = 'block'; // Show the hero section
         document.querySelector('.hero__video-container').style.display = 'block'; // Show the video container
