@@ -205,6 +205,8 @@
     background: var(--block-background);
     color: var(--block-text-color);
     position: relative;
+    overflow: hidden;
+    min-height: 100vh;
     display: flex;
     flex-direction: column
   }
@@ -932,21 +934,19 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: 0;
     overflow: hidden;       /* clip any overflow */
 }
 
 .hero__video-container video {
-    position: absolute;     /* take it out of flow */
-    top: 50%;
-    left: 50%;
-    min-width: 100%;        /* ensure it always covers container */
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -65%);  /* center it */
-    object-fit: cover;      /* preserve aspect ratio while covering */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;          /* remove the manual translate(-50%,-65%) */
+    object-fit: cover;        /* preserve aspect, always cover */
+    object-position: center;  /* center both axes */
 }
   
   @media(min-width:992px) {
@@ -963,7 +963,7 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: radial-gradient(circle at center,
      rgba(0, 0, 0, 0.4) 0%,
      rgba(0, 0, 0, 0.2) 50%,
