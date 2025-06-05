@@ -82,14 +82,13 @@ if (section3) {
   const imgContainer  = section3.querySelector('#section3-img-container');
   const imgElem       = imgContainer.querySelector('img');
 
-  // TODO: replace with your real image URLs, one per accordion item
   const sources = [
-    './beachlaptop.avif',
-    './beachlaptop.avif',
-    './beachlaptop.avif',
-    './beachlaptop.avif',
-    './beachlaptop.avif',
-    './beachlaptop.avif'
+    './globally_accessible_coverage.png',
+    './technological_integration.png',
+    './cost_efficiency.jpg',
+    './flexibility_and_customisation.png',
+    './transparency.jpg',
+    './p2p_goal.png'
   ];
 
   // Remember desktop placement
@@ -184,7 +183,5 @@ if (section3) {
         // Toggle button visibility
         backButton.style.display = 'none'; // Hide the Back button
         contactNavBtn.style.display = 'inline-block'; // Show the Take Survey button
-    });
-
-    
+    });  
 });

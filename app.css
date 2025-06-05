@@ -973,7 +973,7 @@
   }
   
   video {
-    width: 130%;
+    width: 200%;
     left: -15%;
   }
 
@@ -1176,6 +1176,22 @@
     /* padding-top: ; */
 }
 
+/* Section 3: force all images to a 1.5:1 box and crop them to fit */
+.section-3 .block-8-scr__img-container {
+  /* enforce a 1.5 width : 1 height aspect ratio */
+  aspect-ratio: 1.5 / 1;
+  /* hide overflow so any part of the img beyond the box is clipped */
+  overflow: hidden;
+}
+
+.section-3 .block-8-scr__img-container img {
+  /* fill the container */
+  width: 100%;
+  height: 100%;
+  /* crop to cover without distortion */
+  object-fit: cover;
+}
+
 .cta-banner {
   background: var(--gradient-primary);
   color: var(--primary-invert);
@@ -1216,6 +1232,12 @@
 .contact-form-section .contact-form {
   max-width: 800px;
   margin: 0 auto;
+}
+
+#grecaptcha-badge,
+.grecaptcha-badge,
+.grecaptcha-badge iframe {
+  display: none !important;
 }
 
 html { margin: 0; height: 100%; }
