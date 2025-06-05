@@ -914,6 +914,18 @@
       line-height: 1.17
     }
   }
+
+  @media (max-width: 576px) {
+    /* shrink the heading */
+    .hero-nav__item h4 { font-size: 1.0rem; margin: 0; }
+    /* tighten up the buttons */
+    .hero-nav__item button {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+    }
+    /* cut out large nav gutters */
+    .hero-nav { padding-left: 0.5rem; padding-right: 0.5rem; }
+  }
   
   .hero__btns-container {
     display: flex;
