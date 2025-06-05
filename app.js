@@ -143,7 +143,15 @@ if (section3) {
 
     // Function to show the survey
     function showSurvey() {
+        const logo = document.querySelector("#logo")
+        logo.classList.add("highlight")
+
+         // collapse hero to nav height
         const headerEl = document.querySelector('header.hero');
+        const navContainer = headerEl.querySelector('.fixed-nav-container');
+        if (navContainer) {
+          headerEl.style.height = navContainer.offsetHeight + 'px';
+        }
         headerEl.style.minHeight = '0';
 
         // Hide the hero section
@@ -171,7 +179,12 @@ if (section3) {
     })
 
     backButton.addEventListener('click', function() {
+        const logo = document.querySelector("#logo")
+        logo.classList.remove("highlight")
+
+        // restore hero full height
         const headerEl = document.querySelector('header.hero');
+        headerEl.style.height = '';
         headerEl.style.minHeight = '';
 
         // Show the hero section and other content again
