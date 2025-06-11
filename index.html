@@ -42,7 +42,6 @@
           </li>
           <li class="hero-nav__item">
             <button id="contact-btn" class="btn btn-primary contact-btn">Contact Us</button>
-            <button id="back-btn" class="btn btn-secondary" style="display: none;">Back to Home Page</button>
           </li>
         </ul>
       </nav>
@@ -52,7 +51,7 @@
       <div class="hero__body text-center col-lg-8 px-0 mx-auto">
         <h1 class="hero__title mb-3">Protection for <span class="highlight">life without borders</span></h1>
         <p class="hero__paragraph mb-5">We're designing a new benefit protection model — flexible, fair, and <span class="highlight">built for people who live and work across borders</span>. Expatriate, digital nomad, remote worker, mobile employee, frequent traveler... however you define yourself, you can help us shape something that <span class="highlight">truly fits your lifestyle</span> and meets your needs when it comes to protection from everyday risk.</p>
-        <div class="hero__btns-container survey-btn"><a class="hero__btn btn btn-primary mb-2 mb-lg-0 mx-1 mx-lg-2" href="#!">Answer some questions</a>
+        <div class="hero__btns-container survey-btn"><a class="hero__btn btn btn-primary mb-2 mb-lg-0 mx-1 mx-lg-2" href="https://form.mobilityforwardbenefits.com">Answer some questions</a>
           <!-- <a class="hero__btn btn btn-secondary mb-2 mb-lg-0 mx-1 mx-lg-2" href="#!">
               Start your 14-days free
             </a> -->
@@ -76,7 +75,8 @@
       <div class="row px-2 align-items-center justify-content-center flex-column-reverse flex-lg-row">
         <!-- CONTENT -->         
         <div class="col-lg-6 position-relative mt-lg-0">
-          <p class="block__paragraph block__paragraph--big mb-3">Most traditional systems aren't made for people on the move. They're rigid, expensive, and full of fine print. We believe there's a better way — a <span class="highlight">peer-powered approach to protection</span> where communities support each other and unused contributions go back to the group, for the community itself to decide what to do with. In order for us to create this tailor-made solution, please <span class="highlight">take this quick survey</span>! This will help us understand your lifestyle and reasoning for your choices to better know what you need to feel safe and covered — no matter where life takes you.<div class="hero__btns-container survey-btn"><a class="hero__btn btn btn-primary mb-2 mb-lg-0 mx-1 mx-lg-2 survey-btn" href="#!">Take the survey</a>
+          <p class="block__paragraph block__paragraph--big mb-3">Most traditional systems aren't made for people on the move. They're rigid, expensive, and full of fine print. We believe there's a better way — a <span class="highlight">peer-powered approach to protection</span> where communities support each other and unused contributions go back to the group, for the community itself to decide what to do with. In order for us to create this tailor-made solution, please <span class="highlight">take this quick survey</span>! This will help us understand your lifestyle and reasoning for your choices to better know what you need to feel safe and covered — no matter where life takes you.<div class="hero__btns-container survey-btn">
+            <a class="hero__btn btn btn-primary mb-2 mb-lg-0 mx-1 mx-lg-2 survey-btn" href="https://form.mobilityforwardbenefits.com">Take the survey</a>
           </div>
         </div>
         <!-- IMAGE -->
@@ -180,40 +180,13 @@
   </div>
 </div>
 
-  <!------------------------------>
-  <!--Survey---------------->
-  <!------------------------------>
-
-  <div id="survey-container" style="display: none;">
-    <iframe data-tally-src="https://tally.so/r/m6zDEY?transparentBackground=1" 
-        width="100%" 
-        height="100%" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0" 
-        title="✈️ Living and Working Abroad – Tell Us About You!">
-    </iframe>
-  </div>
-  <script>
-    window.addEventListener('load', function() {
-        if (typeof Tally !== 'undefined') {
-            Tally.loadEmbeds();
-        } else {
-            // Fallback - directly set src if Tally doesn't load
-            document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach((iframe) => {
-                iframe.src = iframe.dataset.tallySrc;
-            });
-        }
-    });
-  </script>
-
   <!-- CTA Banner -->
   <div class="block-8-scr info__section space-between-blocks cta-block cta-banner">
     <div class="container text-center">
       <h2 class="block__title mb-4">A tailor-made solution starts from your input</h2>
       <p>Your input is valuable! Your feedback will help us customize and improve solutions to better meet your needs and expectations.</p>
       <div class="hero__btns-container survey-btn">
-        <a class="hero__btn btn btn-primary" href="#!">Take the survey</a>
+        <a class="hero__btn btn btn-primary" href="https://form.mobilityforwardbenefits.com">Take the survey</a>
       </div>
     </div>
   </div>

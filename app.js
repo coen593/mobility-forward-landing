@@ -11,9 +11,6 @@ function playVideo() {
 playVideo();
 
 document.addEventListener('DOMContentLoaded', function() {
-    const surveyButtons = document.querySelectorAll('.survey-btn');
-    const backButton = document.getElementById('back-btn');
-    const contactNavBtn = document.getElementById('contact-btn');
     const contactSection = document.getElementById('contact-section');
 
  // ─── Contact form + reCAPTCHA v3 ─────────────────────────────────────────────
@@ -141,66 +138,4 @@ if (section3) {
   window.addEventListener('resize', () => updateImage(activeIndex));
 }
 
-    // Function to show the survey
-    function showSurvey() {
-        const logo = document.querySelector("#logo")
-        logo.classList.add("highlight")
-
-         // collapse hero to nav height
-        const headerEl = document.querySelector('header.hero');
-        const navContainer = headerEl.querySelector('.fixed-nav-container');
-        if (navContainer) {
-          headerEl.style.height = navContainer.offsetHeight + 'px';
-        }
-        headerEl.style.minHeight = '0';
-
-        // Hide the hero section
-        contactNavBtn.style.display = 'none';
-        backButton.style.display    = 'inline-block';
-                
-        document.querySelector('.hero__body').style.display = 'none'; // Hides the hero section
-        document.querySelector('.hero__video-container').style.display = 'none'; // Hides the video container
-
-        // Hide other content sections
-        document.querySelectorAll('.cta-block').forEach(s => {
-            s.style.display = 'none'; // Hides other sections
-        });
-
-        // Show the survey container
-        document.getElementById('survey-container').style.display = 'block';
-
-        // Toggle button visibility
-        contactNavBtn.style.display = 'none'; // Hide the Take Survey button
-        backButton.style.display = 'inline-block'; // Show the Back button
-    }
-
-    surveyButtons.forEach(button =>{
-        button.addEventListener('click', showSurvey);
-    })
-
-    backButton.addEventListener('click', function() {
-        const logo = document.querySelector("#logo")
-        logo.classList.remove("highlight")
-
-        // restore hero full height
-        const headerEl = document.querySelector('header.hero');
-        headerEl.style.height = '';
-        headerEl.style.minHeight = '';
-
-        // Show the hero section and other content again
-        document.querySelector('.hero__body').style.display = 'block'; // Show the hero section
-        document.querySelector('.hero__video-container').style.display = 'block'; // Show the video container
-
-        // Show other content sections
-        document.querySelectorAll('.cta-block').forEach(s => {
-            s.style.display = 'block'; // Show other sections
-        });
-
-        // Hide the survey container
-        document.getElementById('survey-container').style.display = 'none'; // Hide the survey
-
-        // Toggle button visibility
-        backButton.style.display = 'none'; // Hide the Back button
-        contactNavBtn.style.display = 'inline-block'; // Show the Take Survey button
-    });  
 });
