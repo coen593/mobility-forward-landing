@@ -260,17 +260,7 @@
   </div>
   <script>
     window.onUsersnapLoad = function(api) {
-      api.init({
-        // your existing config
-        capture: {
-            // Try these options to improve cross-origin capture
-            crossOrigin: true,
-            html2canvas: {
-                useCORS: true,
-                allowTaint: false
-            }
-        }
-      });
+      api.init();
     };
     var script = document.createElement('script');
     script.defer = 1;
